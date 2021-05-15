@@ -21,4 +21,10 @@ I have tried to create function for another model (function name fit_image_smth_
 
 Uh, gauss_fitting.py is purely for gauss fitting, although lots of gauss fitting is in calculating.py. So you might want to move some functions around. 
 
+Also, I haven't tested on non-square images. The code has been written, assuming that images are rectangular. However, I haven't done actual testing, so something MIGHT break?? Also, I haven't assumed that galaxy is centered, but ish-centered. So also take care of it. That assumption is only done for masking, so if you manually say for masking that it is not centered, then it should be fine.
+
+In addition, for uncertainties UV images are reduced in size. That is because usually they are way bigger, and I did not want to lose Lya data. In theory, it is possible to reduce images for both of them. So you can implement that if you want to.
+
+Lastly, resampling is done messy. Take care of it. Maybe you should redo it to be honest. 
+
 Otherwise, comments inside should help understand. Hopefully. I tried my best to write good code, but it might still be a mess. Sorry for that, and good luck!
