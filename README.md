@@ -32,4 +32,4 @@ Otherwise, comments inside should help understand. Hopefully. I tried my best to
 
 **Update 01.10.21:**
 
-Just realised something. I might have messed up a little with the function "ang_sep". Please check that it is actually correct. I have suspicion that I might have been passing degrees, when I needed to pass radians into it. For the purpose of the project, the error seems to be quite small actually (2 mistakes seem to cancel each other out ish). Still, it might be nice to check it and fix if there is actually a problem here.
+Just realised something. I might have messed up a little with the function "ang_sep". I have fixed it now. For the purpose of the project, the error should have been extremely small (based on my testing). It would be quite wrong for big angles, but for small angles (like used in this project) the error is <0.1%. Still, it is nice to fix the error. Better late than ever.
