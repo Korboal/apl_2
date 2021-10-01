@@ -28,3 +28,8 @@ In addition, for uncertainties UV images are reduced in size. That is because us
 Lastly, resampling is done messy. Take care of it. Maybe you should redo it to be honest. 
 
 Otherwise, comments inside should help understand. Hopefully. I tried my best to write good code, but it might still be a mess. Sorry for that, and good luck!
+
+
+**Update 01.10.21:**
+
+Just realised something. I might have messed up a little with the function "ang_sep". Please check that it is actually correct. I have suspicion that I might have been passing degrees, when I needed to pass radians into it. For the purpose of the project, the error seems to be quite small actually (2 mistakes seem to cancel each other out ish). Still, it might be nice to check it and fix if there is actually a problem here.
