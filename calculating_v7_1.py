@@ -651,11 +651,14 @@ def ang_sep(obj1, obj2):
     :param obj2: 1D array [dec, ra] coordinates of second object
     :return: Angular separation between two objects in degrees
     """
-    ra1 = obj1[1]
-    dec1 = obj1[0]
-    ra2 = obj2[1]
-    dec2 = obj2[0]
-    return np.arccos(np.sin(dec1) * np.sin(dec2) + np.cos(dec1) * np.cos(dec2) * np.cos(ra1 - ra2))
+    
+    # 01 Oct 2021: fixed issue with radians/degrees.
+    
+    ra1 = obj1[1] / 180 * np.pi
+    dec1 = obj1[0] / 180 * np.pi
+    ra2 = obj2[1] / 180 * np.pi
+    dec2 = obj2[0] / 180 * np.pi
+    return np.arccos((np.sin(dec1) * np.sin(dec2) + np.cos(dec1) * np.cos(dec2) * np.cos(ra1 - ra2))) / np.pi * 180
 
 def ang_sep_many(arr1, arr2):
     """
