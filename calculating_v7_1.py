@@ -667,11 +667,11 @@ def ang_sep_many(arr1, arr2):
     :param arr2: 2D array, each element in format [dec, ra] coordinates of second object
     :return: 1D array Angular separation between two objects in degrees
     """
-    ra1 = arr1[:, 1]
-    dec1 = arr1[:, 0]
-    ra2 = arr2[:, 1]
-    dec2 = arr2[:, 0]
-    return np.arccos(np.sin(dec1) * np.sin(dec2) + np.cos(dec1) * np.cos(dec2) * np.cos(ra1 - ra2))
+    ra1 = arr1[:, 1] / 180 * np.pi
+    dec1 = arr1[:, 0] / 180 * np.pi
+    ra2 = arr2[:, 1] / 180 * np.pi
+    dec2 = arr2[:, 0] / 180 * np.pi
+    return np.arccos(np.sin(dec1) * np.sin(dec2) + np.cos(dec1) * np.cos(dec2) * np.cos(ra1 - ra2)) / np.pi * 180
 
 def kpc_sep(ang_sep, z):
     """
